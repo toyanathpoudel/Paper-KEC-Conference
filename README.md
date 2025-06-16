@@ -5,7 +5,7 @@ This repository contains the complete LaTeX source code, figures, and references
 **“Analysis and Optimization of a Continuous Stirred Tank Reactor (CSTR) for Anaerobic Digestion: A Case Study of Nepal”**
 
 > **Author:** Toyanath Poudel   
-> **Affiliation:** Tribhuwan University , IOE Pulchowk Campus 
+> **Affiliation:** Tribhuwan University , IOE Pulchowk Campus   
 > **Degree:** Master of Mechanical Engineering  
 > **Year:** 2025  
 > **Status:** Review  
