@@ -1,0 +1,182 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{color}
+
+% Page setup
+\geometry{a4paper, top=1in, bottom=1in, left=1.25in, right=1in}
+\setstretch{1.15}
+
+% Title formatting
+\titleformat{\section}{\bfseries\normalsize}{\thesection.}{1em}{}
+\titleformat{\subsection}{\bfseries\itshape\normalsize}{\thesubsection.}{1em}{}
+
+% Header/Footer
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{International Journal on Engineering Technology (InJET)}
+\lhead{Volume 3, Issue no. 1, Dec 2025}
+\cfoot{\thepage}
+
+% Title and authors
+\title{Analysis and Optimization Process of CSTR Digestor Anaerobic Digestion Process: A Case of Nepal}
+\author{Toyanath Poudel$^{1,*}$, Second Author$^2$, *Third Author$^3$ \\
+\small $^1$Affiliation, Address, City, Nepal, email@example.com \\
+\small $^2$Affiliation, Address, City, Nepal, email@example.com \\
+\small $^3$Affiliation, Address, City, Nepal, email@example.com \\
+\small *Corresponding author}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% Abstract
+\begin{abstract}
+\small
+This study analyzes and optimizes the Continuous Stirred Tank Reactor (CSTR) design for anaerobic digestion in Nepal using local organic waste resources. A comprehensive modeling approach involving mass and energy balances, kinetic modeling, and parametric optimization was implemented. The paper presents a systematic methodology for improving methane yield and reactor efficiency under Nepal-specific environmental and operational constraints. Key design parameters were evaluated using sensitivity analysis, and performance improvements were quantified using simulation. The study provides a pathway for improving decentralized biogas production for rural and semi-urban regions of Nepal.
+\end{abstract}
+
+\textbf{Keywords:} Anaerobic Digestion, CSTR, Optimization, Biogas, Nepal, Renewable Energy
+
+\section{Introduction}
+Anaerobic digestion (AD) is a widely recognized biological treatment technology that decomposes organic matter in the absence of oxygen, primarily producing methane and carbon dioxide. In countries like Nepal, where agricultural and organic waste is abundant, anaerobic digestion offers a promising solution for sustainable energy generation and waste management. Despite the wide-scale implementation of biogas plants across Nepal, technical inefficiencies, particularly in the digestion process, limit optimal performance. Among available reactor configurations, the Continuous Stirred Tank Reactor (CSTR) provides uniform conditions and scalability, making it suitable for community-level applications.
+
+This research focuses on optimizing the CSTR-based anaerobic digestion process tailored for Nepalese environmental, feedstock, and infrastructural contexts. A detailed study of thermodynamics, reaction kinetics, and energy efficiency under varying input conditions provides a scientific basis for improved system design.
+
+\section{Literature Review}
+Numerous studies have addressed anaerobic digestion in varying geographical and technological contexts. Bhattarai (2019) discussed Nepal's national biogas programs and highlighted the need for technical improvements to achieve consistent methane production. Dinuccio et al. (2010) explored the impact of mixing intensity on biogas output, a factor relevant in poorly optimized rural digesters.
+
+Li et al. (2011) studied solid-state digestion processes and compared their efficiency against CSTR models, showing that CSTR offers better mixing and stable pH, both critical for microbial activity. Vandevivere et al. (2003) emphasized process stability and control as key advantages of CSTR over plug-flow digesters.
+
+However, very few studies have focused on holistic optimization under region-specific constraints. This research fills that gap by combining modeling, sensitivity analysis, and simulation for Nepal-specific data.
+
+\section{Methodology}
+\subsection{System Overview}
+The chosen system comprises a single-stage CSTR operating under mesophilic conditions (35--38°C). The feedstock is a mixture of cow dung and household organic waste, chosen for availability and high biodegradability. The digester is designed to operate under semi-continuous feeding with consistent hydraulic retention time (HRT).
+
+\subsection{Modeling and Simulation}
+The model incorporates dynamic mass and energy balances along with biochemical reaction kinetics. The modified Monod equation was used to model microbial growth and substrate utilization:
+\begin{equation}
+\mu = \mu_{\text{max}} \frac{S}{K_s + S}
+\end{equation}
+
+Mass balance in a CSTR for substrate:
+\begin{equation}
+\frac{dS}{dt} = \frac{Q}{V}(S_{in} - S) - \mu X
+\end{equation}
+
+Energy balance:
+\begin{equation}
+\frac{dU}{dt} = q_{in} - q_{out} + Q_{gen} - Q_{loss}
+\end{equation}
+
+\subsection{Optimization Strategy}
+Multi-objective optimization was implemented using MATLAB, targeting methane yield and thermal efficiency. The decision variables included temperature, organic loading rate, retention time, and agitation speed. Optimization was performed using Response Surface Methodology (RSM) and verified by Genetic Algorithm (GA).
+
+\section{Results and Discussion}
+\subsection{Simulation Results}
+The simulation predicted that methane yield increases up to a C/N ratio of 25 and temperature of 37°C. Beyond these values, microbial inhibition was observed.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/Figure_3.png}
+\caption{Simulated methane yield with varying C/N ratio and temperature}
+\label{fig:cn_temp}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/Figure_2.png}
+\caption{Impact of retention time and mixing speed on methane yield}
+\label{fig:retention_mixing}
+\end{figure}
+
+\subsection{Optimization Output}
+\begin{table}[H]
+\centering
+\caption{Optimized Operating Conditions for CSTR in Nepal}
+\begin{tabular}{|c|c|c|}
+\hline
+Parameter & Range Tested & Optimum Value \\
+\hline
+Temperature (°C) & 25--45 & 37 \\
+Retention Time (days) & 15--35 & 25 \\
+C/N Ratio & 15--30 & 25 \\
+Mixing Speed (rpm) & 10--100 & 60 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Temperature, Velocity, and Pressure Variations}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{temperature_variation.png}
+\caption{Temperature variation over time and reactor length}
+\label{fig:temp_var}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{velocity_variation.png}
+\caption{Velocity variation over time and reactor length}
+\label{fig:velocity_var}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/pressure_variation.png}
+\caption{Pressure variation over time and reactor length}
+\label{fig:pressure_var}
+\end{figure}
+
+\subsection{Combined Time-Based Variation}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{Figure_1.png}
+\caption{Time-based variation of methane yield, temperature, velocity, and pressure}
+\label{fig:combined_line}
+\end{figure}
+
+\subsection{Extended Simulation Observations}
+\begin{itemize}
+    \item \textbf{Optimal Feedstock Mix:} A 70:30 blend of cow dung to kitchen waste showed enhanced methane yield and system stability.
+    \item \textbf{pH Fluctuations:} pH values remained within the favorable range of 6.8--7.4.
+    \item \textbf{Buffering Capacity:} Addition of calcium carbonate improved pH stability.
+\end{itemize}
+
+\subsection{Operational Strategy and Recommendations}
+\begin{enumerate}
+    \item \textbf{Pre-treatment:} Mechanical shredding and thermal pre-treatment improve biodegradability.
+    \item \textbf{Real-time Monitoring:} Low-cost sensors enhance process control.
+    \item \textbf{Insulation:} Local insulating materials retain mesophilic temperature.
+    \item \textbf{Agitation Protocol:} Periodic mixing is more energy efficient.
+    \item \textbf{Decentralized Design:} Modular units are effective in rural areas.
+\end{enumerate}
+
+\section{Conclusion}
+This study demonstrated the viability of optimizing CSTR-based anaerobic digesters in Nepalese conditions. By using simulation and parametric analysis, key design improvements were identified. These insights contribute to Nepal’s waste-to-energy strategy and sustainable development goals.
+
+\section*{Acknowledgements}
+The authors would like to acknowledge the support from the local municipalities and alternative energy promotion center (AEPC), Nepal.
+
+\section*{References}
+\begin{itemize}
+  \item Bhattarai, S., 2019. \textit{Biogas Technology in Nepal: Status and Challenges}. Kathmandu: Renewable Energy Nepal.
+  \item Dinuccio, E. et al., 2010. \textit{Effect of mixing on biogas production in anaerobic digestion}. Bioresource Technology, 101(2), pp. 451-455.
+  \item Li, Y., Park, S. Y. and Zhu, J., 2011. \textit{Solid-state anaerobic digestion for methane production from organic waste}. Renewable and Sustainable Energy Reviews, 15(1), pp. 821-826.
+  \item Vandevivere, P. et al., 2003. \textit{Review of anaerobic digestion technologies}. Water Science and Technology, 48(4), pp. 17–34.
+\end{itemize}
+
+\end{document}
